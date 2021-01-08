@@ -18,43 +18,27 @@ body {
 	max-width: 650px;
 	margin: 0 auto 50px;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Route159', sans-serif;
+	letter-spacing: -1px;
+	color: #606060;
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #222222;
 	position: relative;
 	transition: 0.2s all ease;
-	&::before {
-	    content: "";
-	    display: inline-block;
-	    bottom: 0;
-	    z-index: -1;
-	    width: 100%;
-	    height: 30%;
-	    position: absolute;
-	    background-color: rgba(#ff5a5f, 0.25);
-	    transition: .2s all ease;
-	    left: 50%;
-	    margin-right: -50%;
-	    padding: 0px 2.5px;
-	    transform: translate(-50%);
-	}
 
 	&:hover {
-		&::before {
-			height: 100%;
-			transition: 0.2s all ease;
-		}
+		color: #ff5a5f;
 	}
 }
 
 h1, h2, h3 {
 	color: #222222;
-	font-family: 'CormorantGaramond', serif;
+	font-family: 'Route159', serif;
 	font-weight: 700;
-	letter-spacing: -2px
+	// letter-spacing: -2px
 }
 
 h1 {
@@ -62,15 +46,16 @@ h1 {
 }
 
 p {
-	letter-spacing: -1px;
+	// letter-spacing: -1px;
 	font-size: 18px;
-	color: #222222;
+	color: #606060;
 }
 
 .section {
 	margin: 50px 0px;
 
 	h1 {
+		font-size: 30px;
 		margin-bottom: 5px;
 	}
 
@@ -84,85 +69,65 @@ p {
 .article-list {
 	margin: 30px 0;
 	display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     transition: 0.2s all ease;
 
-	a {
-		background: transparent;
-		font-size: 20px;
-		font-family: 'CormorantGaramond', serif;
-		font-weight: 700;
-		letter-spacing: -2px;
-		&::before {
-			content: none;
-		}
-	}
+    &.til {
+    	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 
 	.card {
-	    border-radius: 0px;
-	    border: 2px solid #222222;
 	    display: flex;
-	    padding: 20px;
+	    padding: 0px;
 	    flex-direction: column;
 	    /* align-items: center; */
-	    justify-content: center;
-	    background-color: rgba(#fbf36d, 0.7);
+	    justify-content: space-between;
 	    transition: 0.2s all ease;
 	    position: relative;
+	    border-bottom: 1px solid #d0d0d0;
+	    padding: 0 0 20px 0;
 
-	    &::after {
-	    	transition: 0.2s all ease;
-	    	content: '';
-	    	display: block;
-	    	position: absolute;
-	    	width: 100%;
-	    	height: 100%;
-	    	left: 0;
-	    	transform: translate(-6px, 6px) rotate(2deg);
-	    	background-color: rgba(#ff5a5f, 0.7);
-	    	z-index: -1;
-	    }
-
-	    &:hover {
-	    	&::after {
-		    	transform: translate(6px, -6px) rotate(-2deg);
-		    	background-color: rgba(#2bcbba, 0.7);
-		    }
-
-		    // color: #FFFFFF;
-		    // background-color: rgba(#fbf36d, 0);
-
-		    a {
-		    	color: #222222;
-		    }
-	    }
+	    a {
+			background: transparent;
+			font-size: 16px;
+			font-family: 'Route159', sans-serif;
+			font-weight: 500;
+			// letter-spacing: -1.5px;
+			text-decoration: none;
+			&::before {
+				content: none;
+			}
+		}
 
 	    .card-wrapper {
-	    	z-index: 999;
+	    	.title {
+
+	    	}
+
+	    	.date-category {
+	    		display: flex;
+	    		flex-direction: row;
+	    		align-items: center;
+	    		margin-bottom: 5px;
+
+	    		p {
+	    			margin: 0;
+	    			font-size: 13px;
+	    		}
+
+	    		span {
+	    			margin: 0 5px;
+	    		}
+	    	}
+
+	    	.description {
+	    		p {
+	    			color: #a0a0a0;	
+	    		}
+	    		
+	    	}
 	    }
-
-	    // &::before {
-	    // 	content: '';
-	    // 	display: block;
-	    // 	position: absolute;
-	    // 	width: 100%;
-	    // 	height: 100%;
-	    // 	left: 15px;
-	    // 	bottom: 15px;
-	    // 	background-color: rgba(#63cdda, 0.25);
-	    // }
-
-	    // &:hover {
-	    // 	background-color: #ff5a5f;
-	    // 	border-color: #ff5a5f;
-	    // 	color: #ffffff;
-
-	    // 	a {
-	    // 		color: #ffffff;
-	    // 	}
-	    // }
 	}
 
 	p {
@@ -209,4 +174,15 @@ p {
 .full-bleed {
 	width: 100%;
 	grid-column: 1 / -1;
+}
+
+pre, mark {
+    padding: 2px .25rem;
+    border-radius: 2px;
+    border: 1px solid #757575;
+    font-size: .9rem;
+    background-color: rgba(0,0,0,.05);
+    font-weight: 400;
+    overflow-x: auto;
+    font-family: monospace,monospace;
 }

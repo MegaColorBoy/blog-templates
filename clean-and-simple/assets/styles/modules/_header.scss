@@ -8,7 +8,9 @@
 	.logo {
 		background-image: url('../images/site/logo.png');
 		border-radius: 999em;
-		background-size: cover;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 
 	// Used in home page

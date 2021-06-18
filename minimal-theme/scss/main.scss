@@ -101,12 +101,29 @@ html {
 					
 				}
 			}
+
+            button {
+                &.darkModeButton {
+                    color: var(--dt-transparent-white);
+					&:hover {
+						color: rgba(var(--dt-white-color), 1);
+					}
+                }
+            }
 		}
 
 		.details-page {
 			main {
 				border-top: 3px solid var(--dt-white-color);
 			}
+            
+            section {
+                &.article-head {
+                    .cat, .desc {
+                        color: var(--dt-white-color);
+                    }
+                }
+            }
 
 			mark,
 			article p code, 
@@ -323,6 +340,24 @@ ul.listing {
 		&:last-child {
 			margin-right: 0;
 		}
+
+        button {
+            cursor: pointer;
+            font-weight: var(--fw-semi-bold);
+            font-size: 14px;
+            background-color: transparent;
+            border: none;
+            i {
+                position: relative;
+                top: 2px;
+            }
+            &.darkModeButton {
+                color: var(--transparent-black);
+                &:hover {
+                    color: rgba(var(--black-color), 1);
+                }
+            }
+        }
 	}
 }
 
@@ -369,7 +404,14 @@ ul.listing {
 
 		   	&.cat {
 		   		margin-top: 0;
+                color: var(--transparent-black);
+                font-weight: var(--fw-bold);
 		   	}
+
+            &.desc {
+                font-weight: var(--fw-medium);
+                color: var(--transparent-black);
+            }
 		}
 
 		@media (min-width: 320px)
@@ -479,11 +521,13 @@ ul.listing {
 		.article-head {
 			h1 { 
 				&+p {
-					display: none;
+					// display: none;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;  
+					overflow: hidden;
 				}
 			}
-
-			
 		}
 	}
 
@@ -503,7 +547,8 @@ ul.listing {
 
 	mark,
 	article p code,
-	ul li code {
+	ul li code,
+	ol li code {
 	    font-family: "iaw-mono-var";
 	    padding: 2px .25rem;
 	    background-color: rgba(0,0,0,.05);

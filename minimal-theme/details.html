@@ -10,7 +10,7 @@
 		<p class="cat">{{ post.category }}</p>
 		<h1>{{ post.title }}</h1>
 		{% if post.summary|length > 1 %}
-			<p>{{ post.summary }}</p>
+			<p class="desc">{{ post.summary }}</p>
 		{% endif %}
 		<p class="date">{{ post.readingTime }}</p>
 	</section>

@@ -22,6 +22,12 @@
 	<script src="https://unpkg.com/phosphor-icons"></script>
 	<!-- Add OG tags  -->
 
+	<script>
+		if(localStorage.theme){
+			document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
+		}
+	</script>
+
 </head>
 <body class="{{ bodyClass }}">
 	<!-- Navbar -->

@@ -2,7 +2,6 @@
 @import url("https://rsms.me/res/fonts/iaw.css");
 
 :root {
-
 	--logo-url: url('../logo.gif');
 	--max-width: 700px;
 	--font-config: 14px/1.5 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", 
@@ -31,6 +30,7 @@
 	// dark theme colors
 	--dt-black-color: #101011;
 	--dt-white-color: #DDDDDD;
+	--dt-black-alt-color: #1D1D1D;
 	--dt-transparent-white: rgba(250, 250, 250, 0.6);
 }
 
@@ -41,18 +41,22 @@ html {
     -webkit-font-kerning: normal;
     font-kerning: normal;
 
+    /*
     background-image: -webkit-repeating-radial-gradient( center center, 
 		var(--black-color), var(--black-color) 1px, 
 		var(--white-color) 1px, var(--white-color) 100% 
 	);
 	background-size: 8px 8px;
+	*/
 
 	&[data-theme="dark"] {
-		background-color: var(--dt-black-color);
+		background-color: var(--dt-black-alt-color);
+		/*
 		background-image: -webkit-repeating-radial-gradient( center center, 
 			var(--black-color), var(--black-color) 1px, 
 			var(--dt-black-color) 1px, var(--dt-black-color) 100% 
 		);
+		*/
 
 		body {
 			background-color: var(--dt-black-color);
@@ -155,9 +159,9 @@ body {
 	color: var(--black-color);
 	letter-spacing: -0.055em;
 
-	border: 4px solid var(--black-color);
-	-webkit-box-shadow: 12px 12px 0 0 var(--black-color);
-	box-shadow: 12px 12px 0 0 var(--black-color);
+	// border: 4px solid var(--black-color);
+	// -webkit-box-shadow: 12px 12px 0 0 var(--black-color);
+	// box-shadow: 12px 12px 0 0 var(--black-color);
 
 	@media (min-width: 320px)
     and (max-width: 767px) {
